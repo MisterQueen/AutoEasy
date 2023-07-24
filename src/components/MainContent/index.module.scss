@@ -1,0 +1,33 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 12px;
+  padding: 0 15px;
+  max-width: 576px;
+}
+.divider {
+  height: 1px;
+  width: calc(100% - 30px);
+  margin: 15px;
+  background-color: #000;
+}
+
+@media(min-width: 576px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 8px;
+    margin: 12px auto 0;
+
+    :nth-last-child(2), :nth-last-child(1) {
+      grid-column: span 2;
+    }
+
+    .divider {
+      grid-column: span 2;
+    }
+
+    .hideOnDesk {
+      display: none;
+    }
+  }
+}
